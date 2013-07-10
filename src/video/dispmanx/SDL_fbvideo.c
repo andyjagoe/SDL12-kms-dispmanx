@@ -397,7 +397,7 @@ static SDL_Surface *DISPMANX_SetVideoMode(_THIS, SDL_Surface *current,
 	/*layerAlpha.flags = (DISPMANX_FLAGS_ALPHA_FROM_SOURCE | 
            DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS);*/
 	layerAlpha.flags = DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS;
-	layerAlpha.opacity = 255;
+	layerAlpha.opacity = 0;
 	layerAlpha.mask	   = 0;
 	dispvars->alpha = &layerAlpha;
 	
@@ -464,7 +464,7 @@ static SDL_Surface *DISPMANX_SetVideoMode(_THIS, SDL_Surface *current,
 	dispvars->update = vc_dispmanx_update_start( 0 );
 	
 	dispvars->element = vc_dispmanx_element_add( dispvars->update, 
-	   dispvars->display, 0 /*layer*/, &(dispvars->dst_rect), 	   
+	   dispvars->display, 2000 /*layer*/, &(dispvars->dst_rect), 	   
 	   dispvars->resources[flip_page], &(dispvars->src_rect), 
 	   DISPMANX_PROTECTION_NONE, dispvars->alpha, 0 /*clamp*/, 
 	   /*VC_IMAGE_ROT0*/ 0 );
