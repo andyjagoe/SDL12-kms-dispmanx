@@ -394,10 +394,10 @@ static SDL_Surface *DISPMANX_SetVideoMode(_THIS, SDL_Surface *current,
 	
 	//MAC Establecemos alpha. Para transparencia descomentar flags con or.
 	VC_DISPMANX_ALPHA_T layerAlpha;
-	/*layerAlpha.flags = (DISPMANX_FLAGS_ALPHA_FROM_SOURCE | 
-           DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS);*/
-	layerAlpha.flags = DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS;
-	layerAlpha.opacity = 0;
+	layerAlpha.flags = (DISPMANX_FLAGS_ALPHA_FROM_SOURCE | 
+           DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS);
+	/*layerAlpha.flags = DISPMANX_FLAGS_ALPHA_FIXED_ALL_PIXELS;*/
+	layerAlpha.opacity = 255;
 	layerAlpha.mask	   = 0;
 	dispvars->alpha = &layerAlpha;
 	
